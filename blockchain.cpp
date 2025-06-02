@@ -5,7 +5,6 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
-
 using namespace std;
 
 const int MAX_TRANSACTIONS = 10;
@@ -215,7 +214,7 @@ int main() {
     while (true) {
         cout << "\n===== BLOCKCHAIN MENU =====\n";
         cout << "1. Add Transaction\n2. Mine Block\n3. Print Blockchain\n4. Validate Blockchain\n";
-        cout << "5. Exit\n6. Check Balance\n7. List Wallets\nChoice: ";
+        cout << "5. Check Balance\n6. List Wallets\n7. Exit\nChoice: ";
         cin >> choice;
         cin.ignore();
 
@@ -246,15 +245,27 @@ int main() {
                 break;
             case 5:
                 cout << "Exiting...\n";
-                return 0;
-            case 6:
                 cout << "Enter wallet address: ";
                 getline(cin, sender);
                 blockchain.check_balance(sender);
+                return 0;
                 break;
-            case 7:
+            case 6:
                 blockchain.list_wallets();
                 break;
+            case 7:
+                cout << "Exiting...\n";
+                return 0;
+                break;
+            /* case 8:    For testing purpose
+                Block* tampered = blockchain.get_latest_block();
+                if (tampered && tampered->index > 0) {
+                 tampered->transactions[0].amount += 999.99;
+                cout << "Block tampered successfully.\n";
+                 } else {
+                cout << "No tamperable block .\n";
+            }
+                break;*/
             default:
                 cout << "Invalid choice. Try again.\n";
         }
