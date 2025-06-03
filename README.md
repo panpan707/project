@@ -39,7 +39,9 @@ git clone https://github.com/panpan707/project.git
 ```
 
 ### Build the program
+
 ```
+cd project
 g++ blockchain.cpp -o blockchain
 ```
 
