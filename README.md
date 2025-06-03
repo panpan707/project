@@ -14,23 +14,7 @@ This project is a basic simulation of a blockchain implemented in C++.
 ## Requirements
 
 - g++ 14.2 or newer
-- Debian-based Linux distributions
 - Windows 
-## How to run the program for Linux
-### Clone the repo
-```
-git clone https://github.com/panpan707/project.git
-```
-
-### Build the program
-```
-g++ blockchain.cpp -o blockchain
-```
-
-### Executing
-```
-./blockchain
-```
 
 ## How to run the program for Windows
 ### Clone the repo
