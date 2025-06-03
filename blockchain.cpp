@@ -214,7 +214,7 @@ int main() {
     while (true) {
         cout << "\n===== BLOCKCHAIN MENU =====\n";
         cout << "1. Add Transaction\n2. Mine Block\n3. Print Blockchain\n4. Validate Blockchain\n";
-        cout << "5. Check Balance\n6. List Wallets\n7. Exit\nChoice: ";
+        cout << "5. Check Balance\n6. List Wallets\n7. Exit\n8. Test\nChoice: ";
         cin >> choice;
         cin.ignore();
 
@@ -238,17 +238,17 @@ int main() {
                 blockchain.print_chain();
                 break;
             case 4:
-                if (blockchain.is_chain_valid())
+                if (blockchain.is_chain_valid()){
                     cout << "Blockchain is valid!\n";
-                else
+                }
+                else {
                     cout << "Blockchain is invalid!\n";
+                }
                 break;
             case 5:
-                cout << "Exiting...\n";
                 cout << "Enter wallet address: ";
                 getline(cin, sender);
                 blockchain.check_balance(sender);
-                return 0;
                 break;
             case 6:
                 blockchain.list_wallets();
@@ -256,18 +256,21 @@ int main() {
             case 7:
                 cout << "Exiting...\n";
                 return 0;
-                break;
-            /* case 8:    For testing purpose
+            case 8:  {// For testing purpose 
                 Block* tampered = blockchain.get_latest_block();
-                if (tampered && tampered->index > 0) {
+                if (tampered && tampered->index > 0 &&!tampered->transactions.empty()) {
                  tampered->transactions[0].amount += 999.99;
                 cout << "Block tampered successfully.\n";
-                 } else {
+                 } 
+                 else {
                 cout << "No tamperable block .\n";
             }
-                break;*/
+                break;
+            }
+
             default:
                 cout << "Invalid choice. Try again.\n";
+                break;
         }
     }
 
