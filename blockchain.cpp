@@ -8,7 +8,7 @@
 using namespace std;
 
 const int MAX_TRANSACTIONS = 10;
-const int DIFFICULTY = 4;
+const int DIFFICULTY = 6;
 
 unsigned long djb2(const string &str)
 {
