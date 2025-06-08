@@ -5,14 +5,15 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+#include <cstdint>
 using namespace std;
 
 const int MAX_TRANSACTIONS = 10;
-const int DIFFICULTY = 6;
+const int DIFFICULTY = 1;
 
-unsigned long djb2(const string &str)
+uint32_t djb2(const string &str)
 {
-    unsigned long hash = 5381;
+    uint32_t hash = 5381;
     for (char c : str)
         hash = ((hash << 5) + hash) + c;
     return hash;
