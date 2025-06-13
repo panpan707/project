@@ -9,7 +9,7 @@
 using namespace std;
 
 const int MAX_TRANSACTIONS = 10;
-const int DIFFICULTY = 1;
+const int DIFFICULTY = 6;
 
 uint32_t djb2(const string &str)
 {
